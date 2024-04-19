@@ -16,6 +16,8 @@ async def help(ctx: lightbulb.Context) -> None:
 
     if await permcheck(ctx):
         await ctx.respond("{}".format(command_help(ctx.options["command"])))
+    else:
+        ctx.respond("No Perms")
 
 def load(bot):
     bot.add_plugin(plugin)

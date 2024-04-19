@@ -15,8 +15,10 @@ async def setlogs(ctx: lightbulb.Context) -> None:
     await cmd_log(ctx)
 
     if await permcheck(ctx, True):
-        ctx.respond("Boop!")
+        await ctx.respond("Boop!")
         return
+    else:
+        ctx.respond("No Perms")
 
 def load(bot):
     bot.add_plugin(plugin)

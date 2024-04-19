@@ -1,5 +1,6 @@
 import json
 import hikari
+import hikari.permissions
 import lightbulb
 
 OFF_SWITCH  = "database/off-switch.json"
@@ -40,7 +41,7 @@ async def permcheck(ctx=None, adminrequired=False, nsfw=False):
                     return False
                 
             except AttributeError:
-                if ctx.event.interaction.permissions_for(ctx.author).administrator:
+                if (ctx.event.interaction.member.permissions & hikari.Permissions.ADMINISTRATOR) == hikari.Permissions.ADMINISTRATOR: 
                     return True
                 else:
                     return False

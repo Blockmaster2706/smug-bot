@@ -2,20 +2,20 @@ import  hikari
 import  lightbulb
 from    cmd_log     import cmd_log
 from    permcheck   import permcheck
-from    commandhelp import command_help
 
-plugin = lightbulb.Plugin("Help")
+plugin = lightbulb.Plugin("Faggot")
 
 @plugin.command()
-@lightbulb.option("command", "The command to which you need help", default="help", )
-@lightbulb.command("help", "Help for commands")
+@lightbulb.option("user", "The user to faggot", type=6, required=True, autocomplete=True)
+@lightbulb.command("faggot", "Calls someone else a faggot.")
 @lightbulb.implements(lightbulb.SlashCommand)
-async def help(ctx: lightbulb.Context) -> None:
+async def command(ctx: lightbulb.Context) -> None:
 
     await cmd_log(ctx)
 
     if await permcheck(ctx):
-        await ctx.respond("{}".format(command_help(ctx.options.command)))
+        await ctx.respond("Faggot!")
+        return
     else:
         ctx.respond("No Perms")
 
