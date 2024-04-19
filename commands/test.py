@@ -7,13 +7,13 @@ from    permcheck   import permcheck
 plugin = lightbulb.Plugin("Test")
 
 @plugin.command()
-@lightbulb.command("test", "nur ein Test")
+@lightbulb.command("test", "Just a test command :3")
 @lightbulb.implements(lightbulb.PrefixCommand)
 async def test(ctx: lightbulb.Context) -> None:
 
     await cmd_log(ctx)
 
-    if await permcheck(ctx, True, True):    
+    if await permcheck(ctx, False, True):    
     
         await ctx.respond("Yo")
 

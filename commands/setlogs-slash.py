@@ -6,8 +6,8 @@ from    permcheck   import permcheck
 plugin = lightbulb.Plugin("Setlogs")
 
 @plugin.command()
-@lightbulb.option("action", "Was tun mit dem Channel?", choices=["set", "remove"] )
-@lightbulb.option("channel", "Welchen Channel möchtest du setzen?", type=7, channel_types=0, default=None)
+@lightbulb.option("action", "What to do with the channel?", choices=["set", "remove"] )
+@lightbulb.option("channel", "Which channel do you want to set?", type=7, channel_types=0, default=None)
 @lightbulb.command("setlogs", "Admin command to set the channel where logs should be sent")
 @lightbulb.implements(lightbulb.SlashCommand)
 async def setlogs(ctx: lightbulb.Context) -> None:

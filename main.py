@@ -45,10 +45,10 @@ async def on_member_join(event: hikari.MemberCreateEvent) -> None:
 @bot.listen(lightbulb.CommandErrorEvent)
 async def on_error(event: lightbulb.CommandErrorEvent) -> None:
     if event.context.command == None:
-        print(Fore.RED + "Ein User ({}) hat versucht einen Command ({}{}) der nicht existiert zu benutzen.".format(event.context.author, event.context.prefix, event.context.invoked_with) + Style.RESET_ALL)
-        await event.context.respond("Dieser Befehl existiert nicht")
+        print(Fore.RED + "A user ({}) has tried to issue a command ({}{}) that does not exist.".format(event.context.author, event.context.prefix, event.context.invoked_with) + Style.RESET_ALL)
+        await event.context.respond("This command does not exist")
     else:
-        await event.context.respond("Ein Fehler ist aufgetreten. <@{}>".format(DevID), user_mentions=True)
+        await event.context.respond("An error occured. <@{}>".format(DevID), user_mentions=True)
         raise event.exception
 
 @bot.listen(hikari.GuildMessageCreateEvent)

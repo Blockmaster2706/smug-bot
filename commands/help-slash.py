@@ -7,8 +7,8 @@ from    commandhelp import command_help
 plugin = lightbulb.Plugin("Help")
 
 @plugin.command()
-@lightbulb.option("command", "Der Befehl zu dem du Hilfe brauchst", default="help", )
-@lightbulb.command("help", "Hilfe zu Commands")
+@lightbulb.option("command", "The command to which you need help", default="help", )
+@lightbulb.command("help", "Help for commands")
 @lightbulb.implements(lightbulb.SlashCommand)
 async def help(ctx: lightbulb.Context) -> None:
 
