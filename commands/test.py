@@ -13,14 +13,7 @@ async def test(ctx: lightbulb.Context) -> None:
 
     await cmd_log(ctx)
 
-    if await permcheck(ctx, True):
-        
-        # Open the new profile picture file
-        with open("Gui Design.gif", "rb") as file:
-            new_picture = file.read()
-
-        # Update the bot's profile picture
-        await ctx.bot.rest.edit_my_user(avatar=new_picture)
+    if await permcheck(ctx, True, True):    
     
         await ctx.respond("Yo")
 
