@@ -15,10 +15,7 @@ async def cmd_log(ctx):
     logchannelid = get_logID(ctx)
     if logchannelid != 0:
         logchannel = ctx.bot.cache.get_guild_channel(int(logchannelid))
-        try:
-            await logchannel.send('{} used the Slash-Command "{}".'.format(ctx.author, ctx.command.name))
-        except AttributeError:
-            await logchannel.send('{} used the Command "{}"'.format(ctx.author, ctx.command.name))
+        await logchannel.send('{} used the Command "{}"'.format(ctx.author, ctx.command.name))
     elif logchannelid == 0:
         return
     else:
